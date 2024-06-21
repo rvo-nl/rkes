@@ -670,6 +670,14 @@ function drawMainContainerBackdrop (config) {
     .text(function () { if (currentUnit == 'PJ') {return 'Fossiel (PJ/jaar)'}else {return 'CO2-vrij (TWh/jaar)'}})
     .style('font-size', '14px')
     .attr('transform', `translate(${80}, ${893}) rotate(-90)`)
+
+  canvasBackdrop.append('text')
+    .attr('fill', '#666')
+    .attr('x', 0) // Start at origin for x
+    .attr('y', 0) // Start at origin for y
+    .text('De grafiek toont het verbruik van primaire energie om aan de finale vraag van de geselecteerde toepassing te voldoen.')
+    .style('font-size', '14px')
+    .attr('transform', `translate(${110}, ${1010})`)
 }
 
 function switchRoutekaart (config) {
@@ -723,7 +731,7 @@ function drawSankey (zichtjaar) {
 
   sankeyfy({
     mode: 'xlsx',
-    xlsxURL: 'data/sankeydata.xlsx',
+    xlsxURL: '../data/sankeydata.xlsx',
     targetDIV: 'sankeyContainer_main',
     margins: {vertical: 0,horizontal: 200},
     sankeyData: null,

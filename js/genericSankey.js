@@ -284,12 +284,12 @@ function sankeyfy (config) {
       // Zichtjaar label
       canvasMenuBar.append('text')
         .attr('fill', '#333')
-        .style('font-weight', 800)
+        .style('font-weight', 500)
         .attr('x', 0)
         .attr('y', 0)
         .text('Zichtjaar')
         .style('text-anchor', 'end')
-        .style('font-size', '15px')
+        .style('font-size', '16px')
         .attr('transform', 'translate(90, 30)')
 
       buttonData.forEach(({ year, x, isSelected }) => {
