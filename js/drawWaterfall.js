@@ -25,9 +25,9 @@ async function xlsxToJSON(url) {
   }
 }
 
-xlsxToJSON('./data/data_c.xlsx').then(data => {dataset_c = data}).catch(error => {console.error('Error:', error);});
-xlsxToJSON('./data/data_int.xlsx').then(data => {dataset_int = data}).catch(error => {console.error('Error:', error);});
-xlsxToJSON('./data/data_nat.xlsx')
+xlsxToJSON('https://rvo-nl.github.io/rkes/data/data_c.xlsx').then(data => {dataset_c = data}).catch(error => {console.error('Error:', error);});
+xlsxToJSON('https://rvo-nl.github.io/rkes/data/data_int.xlsx').then(data => {dataset_int = data}).catch(error => {console.error('Error:', error);});
+xlsxToJSON('https://rvo-nl.github.io/rkes/data/data_nat.xlsx')
   .then(data => {
     dataset_nat = data
     // INTEGRALE ROUTEKAART WARMTE
