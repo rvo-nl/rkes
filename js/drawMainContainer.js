@@ -731,7 +731,7 @@ function drawSankey (zichtjaar) {
 
   sankeyfy({
     mode: 'xlsx',
-    xlsxURL: 'https://rvo-nl.github.io/data/sankeydata.xlsx',
+    xlsxURL: 'https://rvo-nl.github.io/rkes/data/sankeydata.xlsx',
     targetDIV: 'sankeyContainer_main',
     margins: {vertical: 0,horizontal: 200},
     sankeyData: null,
