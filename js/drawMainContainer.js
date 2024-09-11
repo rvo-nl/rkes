@@ -667,7 +667,7 @@ function drawMainContainerBackdrop (config) {
     .attr('fill', '#666')
     .attr('x', 0) // Start at origin for x
     .attr('y', 0) // Start at origin for y
-    .text(function () { if (currentUnit == 'PJ') {return 'Fossiel (PJ/jaar)'}else {return 'CO2-vrij (TWh/jaar)'}})
+    .text(function () { if (currentUnit == 'PJ') {return 'Fossiel (PJ/jaar)'}else {return 'Fossiel (TWh/jaar)'}})
     .style('font-size', '14px')
     .attr('transform', `translate(${80}, ${893}) rotate(-90)`)
 
