@@ -20485,16 +20485,34 @@
         })          
 	      .call(wrap, 300)
 
-      backdropTitle //EDIT TIJS add
-        .attr('width', function (d) { return getTextWidth(d.title,'10px', 'Roboto')+16}) // EDIT TIJS add TODO: make font-family dynamic
-        .style('visibility', function (d) { if (d.value > 0) {return 'visible'} else return 'hidden'})
+        backdropTitle // EDIT TIJS add
+        .attr('width', function (d) {
+          return getTextWidth(d.title, '10px', 'Roboto') + 16; // EDIT TIJS add TODO: make font-family dynamic
+        })
+        .style('visibility', function (d) {
+          if (d.title === ".") {
+            return 'hidden';
+          } else if (d.value > 0) {
+            return 'visible';
+          } else {
+            return 'hidden';
+          }
+        });
       
       backdropValue //EDIT TIJS add
         .attr('width', function (d) {
           if (currentUnit == 'PJ'){return getTextWidth(d.value + ' PJ', '10px', 'Roboto')+10}
           else return getTextWidth(d.value + ' TWh', '10px', 'Roboto')+10
         }) // EDIT TIJS add TODO: make font-family dynamic
-        .style('visibility', function (d) { if (d.value > 0) {return 'visible'} else return 'hidden'})
+        .style('visibility', function (d) {
+          if (d.title === ".") {
+            return 'hidden';
+          } else if (d.value > 0) {
+            return 'visible';
+          } else {
+            return 'hidden';
+          }
+        })
       
       
         function getTextWidth (text, fontSize, fontFamily) { // EDIT TIJS add function
@@ -20543,14 +20561,30 @@
 	      .attr('transform', textTransform)
 	      .style('display', function (d) {
 	        return (d.y0 === d.y1 || !nodeVisible(d)) ? 'none' : 'inline'
-	      })
+	      }).style('visibility', function (d) {
+          if (d.title === ".") {
+            return 'hidden';
+          } else if (d.value > 0) {
+            return 'visible';
+          } else {
+            return 'hidden';
+          }
+        })
 
 	    value
       .attr('transform', textTransform)
 	      .attr('x', function(d){return getTextWidth(d.title, '10px', 'Roboto') +  13+5}) // EDIT TIJS FONT
         .style('display', function (d) {
 	        return (d.y0 === d.y1 || !nodeVisible(d)) ? 'none' : 'inline'
-	      })
+	      }).style('visibility', function (d) {
+          if (d.title === ".") {
+            return 'hidden';
+          } else if (d.value > 0) {
+            return 'visible';
+          } else {
+            return 'hidden';
+          }
+        })
 
         backdropTitle.attr('transform', function (d) { // EDIT TIJS ADD
 	        var dx = d.x1 - d.x0
